@@ -1,218 +1,217 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบส่งงานนักเรียน</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #f0f2f5; }
-        .container { max-width: 500px; }
-        .card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .btn-primary { background-color: #06C755; border-color: #06C755; }
-        #loading, #successMessage { display: none; }
-        /* สไตล์สำหรับปุ่มกล้อง */
-        .btn-camera {
-            background-color: #00B900; /* สีเขียว LINE */
-            border-color: #00B900;
-            color: white;
-            font-size: 1.1rem;
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .btn-camera:hover {
-            background-color: #00a000;
-            border-color: #00a000;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบส่งงานนักเรียน</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f2f5; }
+        .container { max-width: 500px; }
+        .card { border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .btn-primary { background-color: #06C755; border-color: #06C755; }
+        #loading, #successMessage { display: none; }
+        /* สไตล์สำหรับปุ่มกล้อง */
+        .btn-camera {
+            background-color: #00B900; /* สีเขียว LINE */
+            border-color: #00B900;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-camera:hover {
+            background-color: #00a000;
+            border-color: #00a000;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-4">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title text-center mb-4">ส่งงานนักเรียน</h2>
-                
-                <form id="submissionForm">
-                    <div class="mb-3">
-                        <label for="studentId" class="form-label"><strong>รหัสนักเรียน</strong></label>
-                        <input type="number" class="form-control" id="studentId" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="assignment" class="form-label"><strong>เลือกชิ้นงาน</strong></label>
-                        <select class="form-select" id="assignment" required>
-                            <option value="">-- กรุณาเลือก --</option>
-                            <option value="1">งานครั้งที่ 1</option>
-                            <option value="2">งานครั้งที่ 2</option>
-                            <option value="3">งานครั้งที่ 3</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="imageUploadOption" class="form-label"><strong>แนบรูปภาพงาน</strong></label>
-                        <div class="d-grid gap-2">
-                            <button type="button" class="btn btn-primary btn-lg btn-camera" id="openCameraButton">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
-                                    <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-                                    <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm6-2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1"/>
-                                </svg>
-                                ถ่ายรูปด้วยกล้อง
-                            </button>
-                            <input type="file" class="form-control" id="imageFile" accept="image/*">
-                        </div>
-                        <small id="imageFileName" class="form-text text-muted mt-2"></small>
-                    </div>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">ส่งงานนักเรียน</h3>
+                
+                <form id="submissionForm">
+                    <div class="mb-3">
+                        <label for="studentId" class="form-label"><strong>รหัสนักเรียน</strong></label>
+                        <input type="number" class="form-control" id="studentId" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assignment" class="form-label"><strong>เลือกชิ้นงาน</strong></label>
+                        <select class="form-select" id="assignment" required>
+                            <option value="">-- กรุณาเลือก --</option>
+                            <option value="1">งานครั้งที่ 1 กกก</option>
+                            <option value="2">งานครั้งที่ 2</option>
+                            <option value="3">งานครั้งที่ 3</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="imageUploadOption" class="form-label"><strong>แนบรูปภาพงาน</strong></label>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-primary btn-lg btn-camera" id="openCameraButton">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                    <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm6-2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1"/>
+                                </svg>
+                                ถ่ายรูปด้วยกล้อง
+                            </button>
+                            <input type="file" class="form-control" id="imageFile" accept="image/*">
+                        </div>
+                        <small id="imageFileName" class="form-text text-muted mt-2"></small>
+                    </div>
 
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary btn-lg" id="submitButton">ส่งงาน</button>
-                    </div>
-                </form>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitButton">ส่งงาน</button>
+                    </div>
+                </form>
 
-                <div id="loading" class="text-center mt-3">
-                    <div class="spinner-border text-primary" role="status"></div>
-                    <p class="mt-2">กำลังส่งข้อมูล...</p>
-                </div>
-                
-                <div id="successMessage" class="alert alert-success text-center mt-3">
-                    <h4>✅ ส่งงานสำเร็จ!</h4>
-                    <p>กดปุ่ม "ปิด" ด้านล่างเพื่อกลับสู่ LINE</p>
-                </div>
+                <div id="loading" class="text-center mt-3">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p class="mt-2">กำลังส่งข้อมูล...</p>
+                </div>
+                
+                <div id="successMessage" class="alert alert-success text-center mt-3">
+                    <h4>✅ ส่งงานสำเร็จ!</h4>
+                    <p>กดปุ่ม "ปิด" ด้านล่างเพื่อกลับสู่ LINE</p>
+                </div>
 
-            </div>
-        </div>
-    </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script>
-        // ------ ⚠️ กรุณาแก้ไข LIFF ID ของคุณ ⚠️ ------
-        const LIFF_ID = "2007619494-5DqrWAPG"; 
-        
-        // ------ ⚠️ เราจะกลับมาใส่ URL ตรงนี้ในขั้นตอนสุดท้าย ⚠️ ------
-        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyzY6dgt6-ZBJn5duuuXKErc5Odep4XrlZmFuFdPNsI6Cl8CFBZt-duTDR-7XwnRU_w/exec";
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        // ------ ⚠️ กรุณาแก้ไข LIFF ID ของคุณ ⚠️ ------
+        const LIFF_ID = "2007619494-5DqrWAPG"; 
+        
+        // ------ ⚠️ เราจะกลับมาใส่ URL ตรงนี้ในขั้นตอนสุดท้าย ⚠️ ------
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyzY6dgt6-ZBJn5duuuXKErc5Odep4XrlZmFuFdPNsI6Cl8CFBZt-duTDR-7XwnRU_w/exec";
 
-        let selectedFile = null; // ตัวแปรสำหรับเก็บไฟล์ที่เลือกหรือถ่ายมา
+        let selectedFile = null; // ตัวแปรสำหรับเก็บไฟล์ที่เลือกหรือถ่ายมา
 
-        async function main() {
-            await liff.init({ liffId: LIFF_ID });
-            if (!liff.isLoggedIn()) {
-                liff.login();
-            }
+        async function main() {
+            await liff.init({ liffId: LIFF_ID });
+            if (!liff.isLoggedIn()) {
+                liff.login();
+            }
 
-            // แก้ไขตรงนี้: ตรวจสอบคุณสมบัติให้ถูกต้อง
-            if (!liff.isInClient() || !liff.getFeatures().hasOwnProperty('scanCodeV2') || !liff.getFeatures().scanCodeV2) {
-                document.getElementById('openCameraButton').style.display = 'none';
-            }
-            // ตรวจสอบว่า Browser รองรับการถ่ายรูปหรือไม่ (getUserMedia)
-            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-                document.getElementById('openCameraButton').style.display = 'none';
-            }
-        }
-        main();
+            // ซ่อนปุ่มเลือกไฟล์หากไม่ใช่ใน LINE หรือไม่รองรับ
+            if (!liff.isInClient() || !liff.get, liff.getFeatures().scanCodeV2) { // ตรวจสอบว่าอยู่ใน LINE และรองรับการใช้กล้อง
+                document.getElementById('openCameraButton').style.display = 'none';
+            }
+            // ตรวจสอบว่า Browser รองรับการถ่ายรูปหรือไม่ (getUserMedia)
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                document.getElementById('openCameraButton').style.display = 'none';
+            }
+        }
+        main();
 
-        // เมื่อมีการเลือกไฟล์จาก input type="file"
-        document.getElementById('imageFile').addEventListener('change', function(e) {
-            selectedFile = e.target.files[0];
-            if (selectedFile) {
-                document.getElementById('imageFileName').innerText = `ไฟล์ที่เลือก: ${selectedFile.name}`;
-            } else {
-                document.getElementById('imageFileName').innerText = '';
-            }
-        });
+        // เมื่อมีการเลือกไฟล์จาก input type="file"
+        document.getElementById('imageFile').addEventListener('change', function(e) {
+            selectedFile = e.target.files[0];
+            if (selectedFile) {
+                document.getElementById('imageFileName').innerText = `ไฟล์ที่เลือก: ${selectedFile.name}`;
+            } else {
+                document.getElementById('imageFileName').innerText = '';
+            }
+        });
 
-        // เมื่อกดปุ่ม "ถ่ายรูปด้วยกล้อง"
-        document.getElementById('openCameraButton').addEventListener('click', async function() {
-            // แก้ไขตรงนี้: ตรวจสอบคุณสมบัติให้ถูกต้อง
-            if (!liff.isInClient() || !liff.getFeatures().hasOwnProperty('scanCodeV2') || !liff.getFeatures().scanCodeV2) {
-                alert('ฟังก์ชันนี้ใช้งานได้เฉพาะในแอป LINE เท่านั้น');
-                return;
-            }
+        // เมื่อกดปุ่ม "ถ่ายรูปด้วยกล้อง"
+        document.getElementById('openCameraButton').addEventListener('click', async function() {
+            if (!liff.isInClient() || !liff.getFeatures().scanCodeV2) {
+                alert('ฟังก์ชันนี้ใช้งานได้เฉพาะในแอป LINE เท่านั้น');
+                return;
+            }
 
-            try {
-                // ใช้ liff.get
-                const picture = await liff.get({ quality: 0.8 }); // 0.8 คือคุณภาพของรูปภาพ (0-1)
-                
-                // แปลง base64 string กลับเป็น Blob object เพื่อให้เหมือนกับ input type="file"
-                const byteCharacters = atob(picture.split(',')[1]);
-                const byteNumbers = new Array(byteCharacters.length);
-                for (let i = 0; i < byteCharacters.length; i++) {
-                    byteNumbers[i] = byteCharacters.charCodeAt(i);
-                }
-                const byteArray = new Uint8Array(byteNumbers);
-                selectedFile = new Blob([byteArray], { type: 'image/jpeg' }); // กำหนด type เป็น image/jpeg หรือตามจริง
-                selectedFile.name = `captured_image_${new Date().getTime()}.jpeg`; // กำหนดชื่อไฟล์ให้ (สำคัญมาก)
+            try {
+                // ใช้ liff.get
+                const picture = await liff.get({ quality: 0.8 }); // 0.8 คือคุณภาพของรูปภาพ (0-1)
+                
+                // แปลง base64 string กลับเป็น Blob object เพื่อให้เหมือนกับ input type="file"
+                const byteCharacters = atob(picture.split(',')[1]);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                selectedFile = new Blob([byteArray], { type: 'image/jpeg' }); // กำหนด type เป็น image/jpeg หรือตามจริง
+                selectedFile.name = `captured_image_${new Date().getTime()}.jpeg`; // กำหนดชื่อไฟล์ให้ (สำคัญมาก)
 
-                document.getElementById('imageFileName').innerText = `ไฟล์ที่ถ่าย: ${selectedFile.name}`;
-                document.getElementById('imageFile').value = null; // ล้างค่าใน input type="file" หากมีการเลือกไว้ก่อนหน้า
-            } catch (err) {
-                console.error("เกิดข้อผิดพลาดในการเปิดกล้อง:", err);
-                alert("ไม่สามารถเปิดกล้องได้: " + err.message);
-                selectedFile = null;
-                document.getElementById('imageFileName').innerText = '';
-            }
-        });
+                document.getElementById('imageFileName').innerText = `ไฟล์ที่ถ่าย: ${selectedFile.name}`;
+                document.getElementById('imageFile').value = null; // ล้างค่าใน input type="file" หากมีการเลือกไว้ก่อนหน้า
+            } catch (err) {
+                console.error("เกิดข้อผิดพลาดในการเปิดกล้อง:", err);
+                alert("ไม่สามารถเปิดกล้องได้: " + err.message);
+                selectedFile = null;
+                document.getElementById('imageFileName').innerText = '';
+            }
+        });
 
-        document.getElementById('submissionForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        document.getElementById('submissionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-            const studentId = document.getElementById('studentId').value;
-            const assignment = document.getElementById('assignment').value;
-            
-            // ใช้ selectedFile ที่เป็นตัวแปรกลางแทนการอ้างอิงจาก input โดยตรง
-            if (!studentId || !assignment || !selectedFile) {
-                alert("กรุณากรอกข้อมูลให้ครบทุกช่อง และแนบรูปภาพงาน");
-                return;
-            }
+            const studentId = document.getElementById('studentId').value;
+            const assignment = document.getElementById('assignment').value;
+            
+            // ใช้ selectedFile ที่เป็นตัวแปรกลางแทนการอ้างอิงจาก input โดยตรง
+            if (!studentId || !assignment || !selectedFile) {
+                alert("กรุณากรอกข้อมูลให้ครบทุกช่อง และแนบรูปภาพงาน");
+                return;
+            }
 
-            document.getElementById('submissionForm').style.display = 'none';
-            document.getElementById('loading').style.display = 'block';
+            document.getElementById('submissionForm').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
 
-            const reader = new FileReader();
-            reader.readAsDataURL(selectedFile);
-            reader.onload = async () => {
-                const payload = {
-                    studentId: studentId,
-                    assignment: assignment,
-                    fileName: selectedFile.name, // ใช้ชื่อจาก selectedFile
-                    fileData: reader.result
-                };
+            const reader = new FileReader();
+            reader.readAsDataURL(selectedFile);
+            reader.onload = async () => {
+                const payload = {
+                    studentId: studentId,
+                    assignment: assignment,
+                    fileName: selectedFile.name, // ใช้ชื่อจาก selectedFile
+                    fileData: reader.result
+                };
 
-                try {
-                    const response = await fetch(GAS_WEB_APP_URL, {
-                        method: 'POST',
-                        redirect: 'follow',
-                        body: JSON.stringify(payload),
-                        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
-                    });
+                try {
+                    const response = await fetch(GAS_WEB_APP_URL, {
+                        method: 'POST',
+                        redirect: 'follow',
+                        body: JSON.stringify(payload),
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+                    });
 
-                    const result = await response.json();
-                    
-                    document.getElementById('loading').style.display = 'none';
-                    if (result.status === 'success') {
-                        document.getElementById('successMessage').style.display = 'block';
-                        // 2 วินาทีหลังจากส่งสำเร็จ ให้ปิดหน้าต่าง LIFF อัตโนมัติ
-                        setTimeout(() => {
-                            if (liff.isInClient()) {
-                                liff.closeWindow();
-                            }
-                        }, 2000);
-                    } else {
-                        alert('เกิดข้อผิดพลาด: ' + result.message);
-                        document.getElementById('submissionForm').style.display = 'block';
-                    }
-                } catch (error) {
-                    document.getElementById('loading').style.display = 'none';
-                    alert('เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + error.message);
-                    document.getElementById('submissionForm').style.display = 'block';
-                }
-            };
-            reader.onerror = error => {
-                alert('เกิดข้อผิดพลาดในการอ่านไฟล์: ' + error);
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('submissionForm').style.display = 'block';
-            };
-        });
-    </script>
+                    const result = await response.json();
+                    
+                    document.getElementById('loading').style.display = 'none';
+                    if (result.status === 'success') {
+                        document.getElementById('successMessage').style.display = 'block';
+                        // 2 วินาทีหลังจากส่งสำเร็จ ให้ปิดหน้าต่าง LIFF อัตโนมัติ
+                        setTimeout(() => {
+                            if (liff.isInClient()) {
+                                liff.closeWindow();
+                            }
+                        }, 2000);
+                    } else {
+                        alert('เกิดข้อผิดพลาด: ' + result.message);
+                        document.getElementById('submissionForm').style.display = 'block';
+                    }
+                } catch (error) {
+                    document.getElementById('loading').style.display = 'none';
+                    alert('เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + error.message);
+                    document.getElementById('submissionForm').style.display = 'block';
+                }
+            };
+            reader.onerror = error => {
+                alert('เกิดข้อผิดพลาดในการอ่านไฟล์: ' + error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('submissionForm').style.display = 'block';
+            };
+        });
+    </script>
 </body>
 </html>
