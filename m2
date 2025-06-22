@@ -86,7 +86,7 @@
 
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
-        // ------ ⚠️ กรุณาแก้ไข LIFF ID ของคุณ ⚠️ ------
+        // ------ ⚠️ กรุณาแก้ไข LIFF ID ของคุณ ⚠️------
         const LIFF_ID = "YOUR_LIFF_ID"; 
         
         // ------ ⚠️ เราจะกลับมาใส่ URL ตรงนี้ในขั้นตอนสุดท้าย ⚠️ ------
